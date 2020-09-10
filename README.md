@@ -1,1 +1,1 @@
-# react_native-cookbook
+# React Native Cookbook
