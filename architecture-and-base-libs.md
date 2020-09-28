@@ -73,10 +73,10 @@ logic that interacts with the store.
 
 What is global state and why do I need it?
 
-Let's think our app as a top down tree, and each component user can navigate 
-to is a node on the branches of this tree. If we only had our state on top of 
+Let's think our app as a top down tree, and each component user can navigate to and access 
+is a node on the branches of this tree. If we only had our state on top of 
 the tree that starts the application, we would have to pass all information 
-we need from one component to another one by one.
+we need from one component to another, one by one.
 
 Above model in mind, let's think that we need to pass User object to both 
 Home component and Settings component. In our current state usage, we are 
@@ -100,7 +100,7 @@ To give a very short summary, putting all of the logic related to your server st
 management tool can (or let's be more honest, CERTAINLY WILL) make your life a boilerplate 
 hell and result in a lot of code that needs to be maintained. 
 
-React Query helps this by giving you an amazing tool to `fetch, cache and update 
+React Query helps with this by giving you an amazing tool to `fetch, cache and update 
 data in your React and React Native applications all without touching any "global state"`.
 
 Resources:
