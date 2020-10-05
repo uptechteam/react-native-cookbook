@@ -12,7 +12,7 @@ Unless necessary, this chapter will not go into detail on the preferences that m
 the architecture. There are lots of amazing people who can explain these preferences 
 much better, repeating or copy pasting their words would be both a waste of time and 
 disservice to their work. So please check all the shared resources thoroughly, and 
-research more on your own if the resources provided are not enough, or you feel they 
+research more on your own if the resources provided are not enough, or you feel that they 
 are not compatible with your current level of understanding.
 
 ## Language Preferences
