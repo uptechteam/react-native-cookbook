@@ -3,6 +3,7 @@
 We use `Prettier - Code formatter` extension in tandem with `ESLint` rules for Auto-Styling. <br/>
 Read more about it in "extensions" chapter.
 
+As we extends rules from "Airbnb" in eslintrc, you can read about their [JavaScript Style Guide](https://github.com/airbnb/javascript) and [React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react) 
 <br/>
 
 ## General Code Style points
