@@ -66,10 +66,19 @@ Example:
 ├── components
 │   ├── BackButton
 │   │   ├── index.js
-│   │   └── styles.js
+│   │   ├── BackButton.js
+│   │   └── BackButton-styles.js
 ```
 
 Where index.js will be:
+
+```js
+import BackButton from './BackButton';
+
+export default BackButton;
+```
+
+And BackButton.js will be:
 
 ```js
 // Libs
@@ -79,7 +88,7 @@ import React from 'react';
 import BackIcon from 'assets/icons/back-icon.svg';
 
 // Locals
-import * as Styles from './styles';
+import * as Styles from './BackButton-styles';
 
 const BackButton = ({ onPress }) => (
   <Styles.BackButton onPress={onPress}>
@@ -89,9 +98,26 @@ const BackButton = ({ onPress }) => (
 
 export default BackButton;
 ```
+<br/>
 
-So than you will easily import it like this:
+## __Pros__ about this component structure:
 
-```js
-import BackButton from 'components/BackButton';
-```
+* _Don’t have to be redundant in your import statement_. So to use a BackButton component you would include it like this:
+
+  ```js
+  import BackButton from 'components/BackButton';
+  ```
+
+* _Cleaner editor environment_ – The editor isn’t junked up by a bunch of directory names and doesn’t look like index.js | index.js | index.js | index.js
+
+* _Makes searching easier._
+
+* _Feels more natural_ to do work on the BackButton component in a file called BackButton.js.
+
+* _"BackButton-styles.js"_ - separating this file name with "-" makes it easier to rename **_only_** component name (by double-clicking on unique name part or by using key combinations to quickly slide through words) and feels more clear for visibility.
+
+<br/>
+
+## __Cons__ about this component structure:
+
+* _Extra files in your project._ Having both BackButton.js and index.js means managing and juggling additional files. If you’re copying another component, you may forget to open the index.js to rename the export to the new name.
