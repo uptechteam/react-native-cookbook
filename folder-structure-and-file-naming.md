@@ -1,40 +1,38 @@
 # Folder Structure 
 
-[TODO] - describe more about every folder to clarify the purpose.
-
 <br/>
 
 ```
 .
-├── __tests__
-├── .vscode
-│   ├── launch.json     // Your local config for "React Native Tools" ext.
-│   └── settings.json   // Shared VSCode settings (Spell Checker, formatter, etc.).
+├── __tests__                   // Contains automated test files.
+├── .vscode                     // Contains configs for VSCode
+│   ├── launch.json             // (LOCAL) Your local config for "React Native Tools" ext.
+│   └── settings.json           // (SHARED) VSCode settings, that we share across team members (Spell Checker, formatter, etc.).
 │
-├── android
-├── ios
-├── node_modules
-├── src
-│   ├── assets
+├── android                     // Contains Android-specific files.
+├── ios                         // Contains iOS-specific files.
+├── node_modules                // Contains Node Modules
+├── src                         // Contains source files & folders
+│   ├── assets                  // Contains assets files. May be different for each project.
 │   │   ├── fonts
 │   │   ├── icons
 │   │   └── images
 │   │
-│   ├── components
-│   ├── constants
-│   ├── navigation
-│   ├── screens
-│   ├── models
-│   ├── store
-│   │   ├── actions
-│   │   ├── reducers
-│   │   ├── rootReducer.js
-│   │   └── store.js
+│   ├── components              // Contains React Native components, that we use for creating screens
+│   ├── constants               // Contains files, from which we can import constants across the app
+│   ├── navigation              // Contains Navigation-specific files.
+│   ├── screens                 // Contains screens, that have some logic and builds from components
+│   ├── models                  // Contains folders & files that describe TS interfaces
+│   ├── store                   // Contains Redux-specific files.
+│   │   ├── actions             // Redux Actions
+│   │   ├── reducers            // Redux Reducers
+│   │   ├── middlewares         // Redux Middlewares
+│   │   ├── rootReducer.js      // Combines all reducers
+│   │   └── store.js            // Entry-point of the Redux Store
 │   │
-│   ├── middlewares
-│   ├── theme
-│   ├── utils
-│   └── App.js
+│   ├── theme                   // Contains theme files for styling the App
+│   ├── utils                   // Contains helper function
+│   └── App.js                  // Entry-point of the App in src folder
 │ 
 ├── .buckconfig
 ├── .eslintrc.js
@@ -44,9 +42,9 @@
 ├── .watchmanconfig
 ├── app.json
 ├── babel.config.js
-├── tsconfig.json       // or jsconfig.json
-├── index.js
-├── package.json
+├── tsconfig.json               // or jsconfig.json
+├── index.js                    // Entry-point of the App
+├── package.json                // Metadata relevant to the project
 └── yarn.lock
 ```
 
@@ -57,7 +55,12 @@
 
 We are using `camelCase` for common folder names ('screens', 'components', 'assets', etc.)
 
-For React folders (like components, screens) and theirs files we are using `PascalCase`.
+For React folders (like components, screens) we are using `PascalCase`.
+
+We are don’t use `camelCase/PascalCase` for file names because of:
+
+* readable file names. e.g MyHalfFixedDedupedDirResolver vs my-half-fixed-deduped-dir-resolver 👀
+* no more weird git conflicts when renaming/deleting/adding files on various OS file systems (case-sensitive/insensitive)
 
 
 Example:
@@ -66,19 +69,19 @@ Example:
 ├── components
 │   ├── BackButton
 │   │   ├── index.js
-│   │   ├── BackButton.js
-│   │   └── BackButton-styles.js
+│   │   ├── back-button.js
+│   │   └── back-button-styles.js
 ```
 
 Where index.js will be:
 
 ```js
-import BackButton from './BackButton';
+import BackButton from './back-button';
 
 export default BackButton;
 ```
 
-And BackButton.js will be:
+And back-button.js will be:
 
 ```js
 // Libs
@@ -88,7 +91,7 @@ import React from 'react';
 import BackIcon from 'assets/icons/back-icon.svg';
 
 // Locals
-import * as Styles from './BackButton-styles';
+import * as Styles from './back-button-styles';
 
 const BackButton = ({ onPress }) => (
   <Styles.BackButton onPress={onPress}>
@@ -113,8 +116,6 @@ export default BackButton;
 * _Makes searching easier._
 
 * _Feels more natural_ to do work on the BackButton component in a file called BackButton.js.
-
-* _"BackButton-styles.js"_ - separating this file name with "-" makes it easier to rename **_only_** component name (by double-clicking on unique name part or by using key combinations to quickly slide through words) and feels more clear for visibility.
 
 <br/>
 
