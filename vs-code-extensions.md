@@ -1,0 +1,195 @@
+# VSCode Extensions
+
+## `Prettier - Code formatter`.
+
+VSCode Market Place: [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) 
+
+Installation:
+
+```
+ext install esbenp.prettier-vscode
+```
+
+VSCode settings configuration:
+
+```json
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false,
+    "[javascript]": {
+        "editor.formatOnSave": true
+    },
+    "[javascriptreact]": {
+        "editor.formatOnSave": true
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+    },
+}
+ ```
+
+
+#### `Prettier configuration file` 
+
+This is just a working example. You can modify it for your needs.
+
+.prettierrc.js
+
+```js
+module.exports = {
+  printWidth: 100,
+  bracketSpacing: true,
+  jsxBracketSameLine: false,
+  singleQuote: true,
+  jsxSingleQuote: true,
+  arrowParens: 'always',
+  trailingComma: 'all',
+};
+
+```
+
+
+## `ESLint extension`.
+
+VSCode Market Place: [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
+Installation:
+
+```
+ext install dbaeumer.vscode-eslint
+```
+
+#### `ESLint configuration file` 
+
+This is just a working example. You can modify it for your needs.
+
+.eslintrc.js
+
+```js
+module.exports = {
+  extends: ['airbnb', '@react-native-community', 'plugin:prettier/recommended', 'prettier'],
+  parser: 'babel-eslint',
+  plugins: ['react', 'react-native', 'react-hooks', 'prettier'],
+  env: {
+    es6: true,
+    browser: true,
+    jest: true,
+    'react-native/react-native': true,
+  },
+  settings: {
+    'import/resolver': {
+      'babel-module': {},
+    },
+  },
+  rules: {
+    'no-use-before-define': 'off',
+    'react/jsx-filename-extension': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'react/prop-types': 'off',
+    'comma-dangle': 'off',
+    'padded-blocks': 'off',
+    'arrow-body-style': 'off',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    'react-native/no-unused-styles': 2,
+    'react-native/split-platform-components': 2,
+    'react-native/no-single-element-style-arrays': 2,
+    'react-native/no-inline-styles': 'off',
+    'prettier/prettier': 'error',
+    'jsx-quotes': ['error', 'prefer-single'],
+    'no-shadow': 'off',
+    'import/prefer-default-export': 'off',
+    'react/no-unescaped-entities': 'off',
+    'prefer-destructuring': [
+      'error',
+      {
+        array: false,
+        object: true,
+      },
+    ],
+    'max-lines': ['warn', { max: 500, skipComments: true, skipBlankLines: true }],
+  },
+  ignorePatterns: ['node_modules/'],
+};
+```
+
+## `React Native Tools`.
+This VSCode extension provides a development environment for React Native projects. Using this extension, you can debug your code and quickly run react-native commands from the command palette.
+
+VSCode Market Place: [React Native Tools](https://marketplace.visualstudio.com/items?itemName=msjsdiag.vscode-react-native)
+
+Installation:
+```
+ext install msjsdiag.vscode-react-native
+```
+
+
+## `Code Spell Checker`.
+A basic spell checker that works well with camelCase code.
+
+VSCode Market Place: [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+
+Installation:
+```
+ext install streetsidesoftware.code-spell-checker
+```
+
+## `Command Runner`.
+Run custom shell command defined in vs code configuration and node module package.json
+
+We can use it to quickly run different emulators.
+
+VSCode Market Place: [Command Runner](https://marketplace.visualstudio.com/items?itemName=edonet.vscode-command-runner)
+
+Installation:
+```
+ext install edonet.vscode-command-runner
+```
+VSCode settings configuration:
+```json
+{
+    "command-runner.terminal.name": "react-native",
+    "command-runner.terminal.autoClear": true,
+    "command-runner.terminal.autoFocus": true,
+    "command-runner.commands": {
+        "iPhone 11 Pro": "yarn react-native run-ios --scheme 'Plai Dev' --configuration 'Debug' --simulator='iPhone 11 Pro (13.5)'",
+        "iPhone 11 Pro (Prod)": "yarn react-native run-ios --scheme 'Plai' --configuration 'Release' --simulator='iPhone 11 Pro'",
+        "iPhone SE": "yarn react-native run-ios --scheme 'Plai Dev' --configuration 'Debug' --simulator='iPhone SE (2nd generation)'",
+        "iPhone 7 (real device)": "yarn react-native run-ios --scheme 'Plai Dev' --configuration 'Debug' --device='iPhone (Your_Phone_Name)'",
+        "Android": "yarn react-native run-android",
+    }
+}
+```
+
+## `Auto Rename Tag`.
+Automatically rename paired tag.
+
+VSCode Market Place: [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
+
+Installation:
+```
+ext install formulahendry.auto-rename-tag
+```
+
+## `Svg Preview`.
+Svg Preview for VSCode
+
+VSCode Market Place: [Svg Preview](https://marketplace.visualstudio.com/items?itemName=SimonSiefke.svg-preview)
+
+Installation:
+```
+ext install simonsiefke.svg-preview
+```
+
+## `Error Lens`.
+Highlighting the entire line wherever a diagnostic is generated by the language and also prints the message inline.
+
+VSCode Market Place: [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+
+Installation:
+```
+ext install usernamehw.errorlens
+```
+
+
+
