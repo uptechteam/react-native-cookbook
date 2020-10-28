@@ -38,3 +38,6 @@ import { selectCycle } from 'store/reducers/workspaceReducer';
 // Locals
 import * as Styles from './ObjectivesStyles';
 ```
+
+> Note: also try to group Globals by folder (like in the example above)
+
