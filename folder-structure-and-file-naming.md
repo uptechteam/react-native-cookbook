@@ -55,33 +55,30 @@
 
 We are using `camelCase` for common folder names ('screens', 'components', 'assets', etc.)
 
-For React folders (like components, screens) we are using `PascalCase`.
+For React files `PascalCase`.
 
-We are don’t use `camelCase/PascalCase` for file names because of:
-
-* readable file names. e.g MyHalfFixedDedupedDirResolver vs my-half-fixed-deduped-dir-resolver 👀
-* no more weird git conflicts when renaming/deleting/adding files on various OS file systems (case-sensitive/insensitive)
+> Note: By default, Mac OS is case-insensitive but case-preserving. This means that as far as macOS is concerned Test.js and test.js are the same file. So be attentive to the case when creating folders/files so that they don't run into that problem.
 
 
 Example:
 
 ```
 ├── components
-│   ├── BackButton
+│   ├── backButton
 │   │   ├── index.js
-│   │   ├── back-button.js
-│   │   └── back-button-styles.js
+│   │   ├── BackButton.js
+│   │   └── BackButton-styles.js
 ```
 
 Where index.js will be:
 
 ```js
-import BackButton from './back-button';
+import BackButton from './BackButton';
 
 export default BackButton;
 ```
 
-And back-button.js will be:
+And BackButton.js will be:
 
 ```js
 // Libs
@@ -91,7 +88,7 @@ import React from 'react';
 import BackIcon from 'assets/icons/back-icon.svg';
 
 // Locals
-import * as Styles from './back-button-styles';
+import * as Styles from './BackButton-styles';
 
 const BackButton = ({ onPress }) => (
   <Styles.BackButton onPress={onPress}>
@@ -108,7 +105,7 @@ export default BackButton;
 * _Don’t have to be redundant in your import statement_. So to use a BackButton component you would include it like this:
 
   ```js
-  import BackButton from 'components/BackButton';
+  import BackButton from 'components/backButton';
   ```
 
 * _Cleaner editor environment_ – The editor isn’t junked up by a bunch of directory names and doesn’t look like index.js | index.js | index.js | index.js
@@ -116,6 +113,8 @@ export default BackButton;
 * _Makes searching easier._
 
 * _Feels more natural_ to do work on the BackButton component in a file called BackButton.js.
+
+* _"BackButton-styles.js"_ - separating this file name with "-" makes it easier to rename **_only_** component name (by double-clicking on unique name part or by using key combinations to quickly slide through words) and feels more clear for visibility.
 
 <br/>
 
