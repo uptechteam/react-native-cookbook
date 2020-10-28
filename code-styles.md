@@ -1,10 +1,10 @@
 # Code styles guide
 
-We use `Prettier - Code formatter` extension in tandem with `ESLint` rules for Auto-Styling. <br/>
+We use `Prettier - Code formatter` extension in tandem with `ESLint` rules for Auto-Styling.
 Read more about it in "extensions" chapter.
 
-As we extends rules from "Airbnb" in eslintrc, you can read about their [JavaScript Style Guide](https://github.com/airbnb/javascript) and [React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react) 
-<br/>
+As we extend rules from "Airbnb" in eslintrc, you can read about their [JavaScript Style Guide](https://github.com/airbnb/javascript) and [React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react) 
+
 
 ## General Code Style points
 
@@ -12,13 +12,11 @@ As we extends rules from "Airbnb" in eslintrc, you can read about their [JavaScr
 * Embed “is”/”has”/”should” for boolean variable/props
 * Embed “on” in front of handler props name to distinguish it with value props
 
-<br/>
-<br/>
+
 
 ## Code Style rules by examples
-<br/>
 
-### Sort the imports
+### Sorting the imports
 
 ``` js
 // Libs

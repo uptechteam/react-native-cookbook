@@ -1,7 +1,5 @@
 # Folder Structure 
 
-<br/>
-
 ```
 .
 ├── __tests__                   // Contains automated test files.
@@ -48,14 +46,11 @@
 └── yarn.lock
 ```
 
-<br/>
-<br/>
-
 # File Naming
 
 We are using `camelCase` for common folder names ('screens', 'components', 'assets', etc.)
 
-For React files `PascalCase`.
+For React folders/files `PascalCase`.
 
 > Note: By default, Mac OS is case-insensitive but case-preserving. This means that as far as macOS is concerned Test.js and test.js are the same file. So be attentive to the case when creating folders/files so that they don't run into that problem.
 
@@ -64,10 +59,10 @@ Example:
 
 ```
 ├── components
-│   ├── backButton
+│   ├── BackButton
 │   │   ├── index.js
 │   │   ├── BackButton.js
-│   │   └── BackButton-styles.js
+│   │   └── BackButtonStyles.js
 ```
 
 Where index.js will be:
@@ -88,7 +83,7 @@ import React from 'react';
 import BackIcon from 'assets/icons/back-icon.svg';
 
 // Locals
-import * as Styles from './BackButton-styles';
+import * as Styles from './BackButtonStyles';
 
 const BackButton = ({ onPress }) => (
   <Styles.BackButton onPress={onPress}>
@@ -98,7 +93,8 @@ const BackButton = ({ onPress }) => (
 
 export default BackButton;
 ```
-<br/>
+
+> Note: This guide assumes styled-components library is used for styling, but that is not a requirement and should be changed in future once we make a decision on the way we do styling.
 
 ## __Pros__ about this component structure:
 
@@ -113,10 +109,6 @@ export default BackButton;
 * _Makes searching easier._
 
 * _Feels more natural_ to do work on the BackButton component in a file called BackButton.js.
-
-* _"BackButton-styles.js"_ - separating this file name with "-" makes it easier to rename **_only_** component name (by double-clicking on unique name part or by using key combinations to quickly slide through words) and feels more clear for visibility.
-
-<br/>
 
 ## __Cons__ about this component structure:
 
