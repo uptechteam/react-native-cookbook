@@ -13,7 +13,7 @@ Also, FireBase has a good article about setting up all iOS required stuff:
 
 After doing this right, you will have a working Push Notification, and it's enough for you in case if you will not use Firebase Cloud Messaging.
 
-Honestly, it will work with Firebase too, but you will not receive notifications in the Foreground app state (at least for the moment, when I'm writing this). To get this works, you can use this little hack:
+Honestly, it will work with Firebase too, but you will not receive notifications in the Foreground app state (at least for the moment, when I'm writing this). To get this to work, you can use this little hack:
 
 
 ``` js

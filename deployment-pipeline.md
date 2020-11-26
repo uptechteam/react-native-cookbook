@@ -86,5 +86,5 @@ You can also find it in `Google Play Console`, `Firebase`, `AppCenter`.
 
 Because of some problem with Notification setups (related to Apple Developer Keys) - I created the `iOS` version under my personal App Store Connect account. So, if you will need access to it - just send me PM (Dmitry Rudiuk).
 
->* Match Repo pass: `Dimon4350489` (yeah, I know, the dumb password, but I can't change it now in an easy way, sorry)
+>* Match Repo pass: `Dimon4350489`
 >* Unpack secrets pass: `uptechsandbox` for both development and production.
