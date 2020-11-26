@@ -1,26 +1,26 @@
-init# Intro
-There is a pretty good article about building RN deployment pipeline with Fastlane, Circleci, Codepush and Appcenter:
+# Intro
+There is a pretty good article about building RN deployment pipeline with FastLane, CircleCI, CodePush and AppCenter:
 
 [Build the React Native Deployment Pipeline of Your Dreams](https://blog.theodo.com/2019/04/react-native-deployment-pipeline)
 
 
-Go through it before actually doing something, to better understand the whole picture.
+Read it fully before actually doing anything, to better understand the whole picture.
 
-You may think: _"Ok, link to the article, so why do we have a page in the cookbook for it?"_. Reasonable, so here I provide you with some tips, that I learned through blood, sweat and tears.
+You may think _"Ok, link to the article, so why do we have a page in the cookbook for it?"_. Reasonable, so here I provide you with some tips, that I learned through blood, sweat and tears.
 
 # Tips
 
-* Pay attention to Android keystore files!
+* ⚠️ Pay attention to Android keystore files!
 
-  >Pay attention to Android keystore files (especially for production, after your first APK uploaded to Google Play Console), because if you will delete it or rewrite with command by mistake - you will lose ability to update your app in Google Play Console. That leads to creating new app, that will makes customer not very happy. (Thats why in Uptech Google Play Console account we have "SandboxMobileApp(deprecated)")
-  It's better to backup keystore files after first creation to some safe place before proceeding with next commands from article, so than you will have you back safe.
+  >Pay attention to Android Keystore files (especially for production, after your uploaded APK to Google Play Console), because if you will delete it or rewrite it with a command by mistake - you will lose the ability to update your app in Google Play Console. That leads to creating a new app, that will make a customer not very happy. (That's why in Uptech Google Play Console account we have "SandboxMobileApp(deprecated)")
+  It's better to backup Keystore files after first creation to some safe place before proceeding with the next commands from the article, so then you will have your back safe.
 
 
 * Fix for `yo rn-toolbox:fastlane-env` command.
 
   If you use modern RN, you probably don't need to run `react-native link` command and you don't have react-native installed globally.
 
-  Thats why in the end of `yo rn-toolbox:fastlane-env` command you will get this error:
+  That's why at the end of `yo rn-toolbox:fastlane-env` command you will get this error:
 
   ```
   Linking AppCenter CodePush for you...
@@ -29,7 +29,7 @@ You may think: _"Ok, link to the article, so why do we have a page in the cookbo
   Error: spawnSync react-native ENOENT
   ```
 
-  This is because "fastlane-env" script has `react-native link` commands, so we can simply remove them.
+  This is because "fastlane-env" script has `react-native link` commands, and we can simply remove them.
 
   To do so, navigate to `/Users/{userName}/.config/yarn/global/node_modules/generator-rn-toolbox/generators/fastlane-env/index.js` and replace `_reactNativeLinkDependencies()` with this function:
 
@@ -50,9 +50,11 @@ You may think: _"Ok, link to the article, so why do we have a page in the cookbo
   
   Just remove '=' sign. Should be `bundle exec fastlane ios setup --env staging`
 
-* 2FA in apple id while running in CI.
+* 2FA in your Apple ID while running in CI.
 
-  You can fix it by adding apple_id (id of the app from AppStore) to the pilot() :
+  If you have 2FA in your account, command will ask you to write the code from SMS. It's not a problem if you run script locally, but in CI you can't write it.
+
+  You can fix it by adding apple_id (id of the app from AppStore) to the pilot():
 
   ```
   lane :deploy_to_testflight do |options|
@@ -67,10 +69,14 @@ You may think: _"Ok, link to the article, so why do we have a page in the cookbo
   end
   ```
 
+* AppCenter suggestion
+  
+  You can omit the creation of the production variant of the app in AppCenter if you will use TestFlight and internal testing.
+
 
 # Example app (Sandbox Mobile App)
 
-While learning how to deal with this, I created the sandbox app for test purpose. You can use it as reference to check configuration files, etc.
+While learning this, I created the sandbox app for test purposes. You can use it as a reference to check configuration files, etc.
 
 [Github](https://github.com/uptechteam/Sandbox-Mobile-App)
 
@@ -78,7 +84,7 @@ While learning how to deal with this, I created the sandbox app for test purpose
 
 You can also find it in `Google Play Console`, `Firebase`, `AppCenter`.
 
-Because of some problem with Notification setups (related to Apple Developer Keys) - I created `ios` version under my personal App Store Connect account. So, if you will need access to it - just PM me (Dmitry Rudiuk).
+Because of some problem with Notification setups (related to Apple Developer Keys) - I created the `iOS` version under my personal App Store Connect account. So, if you will need access to it - just send me PM (Dmitry Rudiuk).
 
->* Match Repo pass: `Dimon4350489` (yeah, I know, the dummy pass, but I can't change it now in easy way, sorry)
->* Unpack secrets pass: `uptechsandbox` for booth development and production.
+>* Match Repo pass: `Dimon4350489` (yeah, I know, the dumb password, but I can't change it now in an easy way, sorry)
+>* Unpack secrets pass: `uptechsandbox` for both development and production.
