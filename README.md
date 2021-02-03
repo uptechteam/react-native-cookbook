@@ -9,4 +9,5 @@
 ### 5) [Deployment Pipeline](deployment-pipeline.md)
 ### 6) [Push Notifications](push-notifications.md)
 ### 7) [Build & Deployment workflow](build-and-deployment-workflow.md)
+### 8) [Gitflow & CI processes](gitflow-and-ci.md)
 
