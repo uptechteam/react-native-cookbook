@@ -34,7 +34,7 @@ After this, you can move on to release management.
 
 2) In "Store Version Number" enter the new version (which you entered in the first step of the "Development Build" Section)
 3) Fill in the "What's New in This Version", check that screenshots are still actual, and select "Build" with a proper build number.
-4) Proceed to publish the App.
+4) Proceed to publish the App by clicking on "Save" and then "Submit for Review".
 
 ### Android
 
@@ -42,4 +42,4 @@ After this, you can move on to release management.
 2) Click on "View release details" on the proper app version
 3) Add "Release notes" here.
 4) Return to the previous page and select Promote release > Production
-5) Proceed to publish the App.
+5) Check all info and proceed to publish the App by clicking on "Review release" > "Start rollout to Production".
